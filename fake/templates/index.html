@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media User Classification</title>
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(90deg, #e40952, #000000 100%);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Main container */
+    .container {
+      width: 100%;
+      max-width: 600px;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 12px 20px rgba(222, 6, 6, 0.1);
+      border-radius: 12px;
+      animation: fadeIn 0.6s ease-in-out;
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    /* Title */
+    h1 {
+      text-align: center;
+      color: black;
+      margin-bottom: 20px;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+    }
+
+    /* Form */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    input[type="text"] {
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 1.2em;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #4CAF50;
+      box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+    }
+
+    button {
+      padding: 15px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: black;
+      font-weight: bold;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Additional styling */
+    .hover-effect:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Classify Social Media User</h1>
+    <form id="userForm">
+      <label for="id">User ID:</label>
+      <input type="text" id="id" name="id" required placeholder="Enter User ID">
+
+      <label for="name">User Name:</label>
+      <input type="text" id="name" name="name" required placeholder="Enter User Name">
+
+      <button type="submit" class="hover-effect">Classify User</button>
+    </form>
+
+    <footer>
+      <p>&copy; 2025 User Classification. All rights reserved. <br> Powered by <a href="#">Your Name</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Handling form submission
+    document.getElementById('userForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Get form values
+      let userId = document.getElementById('id').value;
+      let userName = document.getElementById('name').value;
+
+      // Display user info in console (You can replace this with an actual call to a model/endpoint)
+      console.log(`User ID: ${userId}`);
+      console.log(`User Name: ${userName}`);
+
+      // Simulate classification result
+      let classificationResult = (Math.random() > 0.5) ? "Real" : "Fake";
+
+      alert(`User Classification Result: ${classificationResult}`);
+    });
+  </script>
+</body>
+</html>
